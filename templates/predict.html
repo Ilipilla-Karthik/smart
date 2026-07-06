@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Smart Lender - Loan Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🏦 Smart Lender</h1>
+    <h2>Loan Approval Prediction</h2>
+
+    <form action="/submit" method="POST">
+
+        <label>Gender</label>
+        <select name="Gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Marital Status</label>
+        <select name="Married" required>
+            <option value="" disabled selected>Select Marital Status</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Number of Dependents</label>
+        <select name="Dependents" required>
+            <option value="" disabled selected>Select Dependents</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+
+        <label>Education</label>
+        <select name="Education" required>
+            <option value="" disabled selected>Select Education</option>
+            <option>Graduate</option>
+            <option>Not Graduate</option>
+        </select>
+
+        <label>Self Employed</label>
+        <select name="Self_Employed" required>
+            <option value="" disabled selected>Select Employment Status</option>
+            <option>No</option>
+            <option>Yes</option>
+        </select>
+
+        <label>Applicant Monthly Income (₹)</label>
+        <input
+            type="number"
+            name="ApplicantIncome"
+            placeholder="Example: 5000"
+            min="0"
+            max="100000"
+            required>
+
+        <label>Co-applicant Monthly Income (₹)</label>
+        <input
+            type="number"
+            name="CoapplicantIncome"
+            placeholder="Example: 2000"
+            min="0"
+            max="100000"
+            required>
+
+        <label>Loan Amount (₹ Thousands)</label>
+        <input
+            type="number"
+            name="LoanAmount"
+            placeholder="Example: 150 (₹1,50,000)"
+            min="1"
+            max="70000"
+            required>
+
+        <label>Loan Term (Months)</label>
+        <select name="Loan_Amount_Term" required>
+            <option value="" disabled selected>Select Loan Term</option>
+            <option value="360">360 Months (30 Years)</option>
+            <option value="180">180 Months (15 Years)</option>
+            <option value="120">120 Months (10 Years)</option>
+            <option value="84">84 Months (7 Years)</option>
+            <option value="60">60 Months (5 Years)</option>
+            <option value="36">36 Months (3 Years)</option>
+        </select>
+
+        <label>Credit History</label>
+        <select name="Credit_History" required>
+            <option value="" disabled selected>Select Credit History</option>
+            <option value="1">Good Credit History</option>
+            <option value="0">No / Poor Credit History</option>
+        </select>
+
+        <label>Property Area</label>
+        <select name="Property_Area" required>
+            <option value="" disabled selected>Select Property Area</option>
+            <option>Urban</option>
+            <option>Semiurban</option>
+            <option>Rural</option>
+        </select>
+
+        <br>
+
+        <button type="submit">Predict Loan Approval</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
