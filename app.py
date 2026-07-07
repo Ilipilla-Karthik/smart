@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import pandas as pd
 import joblib
+from xgboost import data
 
 app = Flask(__name__)
 
@@ -10,7 +11,7 @@ scaler = joblib.load("model/scaler.pkl")
 
 
 @app.route("/")
-def home():return "<h1>Flask is Working!</h1>"
+def home():return render_template("home.html")
 
 
 @app.route("/predict")
@@ -63,6 +64,9 @@ def submit():
             "Credit_History": credit_history,
             "Property_Area": property_area
         }])
+
+        print("\n========== RAW FORM DATA ==========")
+        print(request.form)
 
         print("\n========== INPUT DATA ==========")
         print(data)

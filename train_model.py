@@ -74,6 +74,14 @@ model.fit(X_train, y_train)
 # Prediction
 # ==============================
 y_pred = model.predict(X_test)
+print("\nUnique Predictions:")
+print(set(y_pred))
+
+print("\nFirst 20 Predictions:")
+print(y_pred[:20])
+
+print("\nFirst 20 Actual:")
+print(y_test.values[:20])
 
 # ==============================
 # Evaluation
